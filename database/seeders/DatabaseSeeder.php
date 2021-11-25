@@ -10,8 +10,6 @@ use App\Models\PostJob;
 use App\Models\University;
 use App\Models\CategoryCourse;
 
-use Database\Seeders\TypeUserSeeder;
-
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -21,8 +19,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(
-            TypeUserSeeder::class
-        );
+        $this->call([
+            TypeUserSeeder::class,
+            UserSeeder::class,
+            UniversitySeeder::class,
+            CourseSeeder::class,
+            PeriodSeeder::class,
+            DisciplineSeeder::class,
+            CategoryCourseSeeder::class,
+            PostJobSeeder::class,
+        ]);
     }
 }
